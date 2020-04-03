@@ -1,6 +1,6 @@
 {
   "name": "react-google-books-search",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
