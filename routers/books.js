@@ -28,4 +28,19 @@ router.post("/", (req, res, next) => {
   });
 });
 
+router.get("/:title", (req, res, next) => {
+  const id = req.params.title;
+  if (id === "beenish") {
+    res.status(200).json({
+      message: "handling sepecial request",
+      id: id,
+    });
+  } else {
+    res.status(200).json({
+      message: "not very special request",
+      id: id,
+    });
+  }
+});
+
 module.exports = router;
