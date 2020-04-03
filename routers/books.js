@@ -47,4 +47,16 @@ router.get("/:bookId", (req, res, next) => {
     });
 });
 
+router.delete("/:bookId", (req, res, next) => {
+  const id = req.params.bookId;
+  Book.remove({ _id: id })
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: err });
+    });
+});
+
 module.exports = router;
