@@ -3,6 +3,8 @@ import API from "./utils/Api";
 
 import "./App.css";
 
+import Navbar from "./components/Navbar";
+
 class App extends React.Component {
   state = {
     isLoading: true,
@@ -24,13 +26,15 @@ class App extends React.Component {
   render() {
     return this.state.books.map((book) => (
       <div className="App">
+        <Navbar />
         <h2>{book.volumeInfo.title}</h2>
-        <p>{book.volumeInfo.authors}</p>
-        <p>{book.volumeInfo.description}</p>
+        <h4>{book.volumeInfo.authors}</h4>
+        <p>Description : {book.volumeInfo.description}</p>
         <img
           src={book.volumeInfo.imageLinks.smallThumbnail}
           alt={book.volumeInfo.title}
         />
+        <br />
         <a href={book.volumeInfo.previewLink}>Book preview</a>
       </div>
     ));
