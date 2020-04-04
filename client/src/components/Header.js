@@ -2,11 +2,9 @@ import React from "react";
 
 function Header() {
   return (
-    <div>
-      <span class="border border-dark">
-        <p>Some example text that's free-flowing within the dropdown menu.</p>
-        <p class="mb-0">And this is more example text.</p>
-      </span>
+    <div className="hearderDiv container-fluid">
+      <h3>(React) Google Books Search</h3>
+      <h5 className="headerh5">Search and Save Books of Interest</h5>
     </div>
   );
 }
