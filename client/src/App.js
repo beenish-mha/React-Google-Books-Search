@@ -3,7 +3,8 @@ import API from "./utils/Api";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import AllBooks from "./components/AllBooks";
+// import AllBooks from "./components/AllBooks";
+import SavedBooks from "./components/SavedBooks";
 class App extends React.Component {
   state = {
     isLoading: true,
@@ -28,7 +29,8 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Header />
-        <AllBooks books={this.state.books} />
+        {/* <AllBooks books={this.state.books} /> */}
+        <SavedBooks />
       </div>
     );
   }
