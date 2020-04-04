@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import API from "./utils/Api";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    search: "",
+    books: [],
+    title: "",
+    authors: [],
+    description: "",
+    imgLink: "",
+    previewLink: "",
+  };
+
+  componentDidMount() {
+    API.getBooks().then((res) => {
+      this.setState({
+        books: res.data.items,
+
+        isLoading: false,
+        title: res.data.items[0].volumeInfo.title,
+        authors: res.data.items[0].volumeInfo.authors,
+        description: res.data.items[0].volumeInfo.description,
+        imgLink: res.data.items[0].volumeInfo.imageLinks.smallThumbnail,
+        previewLink: res.data.items[0].volumeInfo.previewLink,
+      });
+
+      console.log(this.state.books);
+    });
+  }
+  render() {
+    return (
+      <div className="App">
+        <h1>Google Books!</h1>
+        <h2>{this.state.title}</h2>
+        <p>{this.state.authors}</p>
+        <p>{this.state.description}</p>
+        <img src={this.state.imgLink} alt={this.state.title} />
+        <a href={this.state.previewLink}>Book preview</a>
+      </div>
+    );
+  }
 }
 
 export default App;
