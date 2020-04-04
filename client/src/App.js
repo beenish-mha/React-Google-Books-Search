@@ -8,11 +8,6 @@ class App extends React.Component {
     isLoading: true,
     search: "",
     books: [],
-    title: "",
-    authors: [],
-    description: "",
-    imgLink: "",
-    previewLink: "",
   };
 
   componentDidMount() {
@@ -21,27 +16,24 @@ class App extends React.Component {
         books: res.data.items,
 
         isLoading: false,
-        title: res.data.items[0].volumeInfo.title,
-        authors: res.data.items[0].volumeInfo.authors,
-        description: res.data.items[0].volumeInfo.description,
-        imgLink: res.data.items[0].volumeInfo.imageLinks.smallThumbnail,
-        previewLink: res.data.items[0].volumeInfo.previewLink,
       });
 
       console.log(this.state.books);
     });
   }
   render() {
-    return (
+    return this.state.books.map((book) => (
       <div className="App">
-        <h1>Google Books!</h1>
-        <h2>{this.state.title}</h2>
-        <p>{this.state.authors}</p>
-        <p>{this.state.description}</p>
-        <img src={this.state.imgLink} alt={this.state.title} />
-        <a href={this.state.previewLink}>Book preview</a>
+        <h2>{book.volumeInfo.title}</h2>
+        <p>{book.volumeInfo.authors}</p>
+        <p>{book.volumeInfo.description}</p>
+        <img
+          src={book.volumeInfo.imageLinks.smallThumbnail}
+          alt={book.volumeInfo.title}
+        />
+        <a href={book.volumeInfo.previewLink}>Book preview</a>
       </div>
-    );
+    ));
   }
 }
 
