@@ -12,7 +12,7 @@ app.use(express.static("client/build"));
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-    "mongodb://heroku_75jkfncr:BeemLab5@ds331758.mlab.com:31758/heroku_75jkfncr",
+    "mongodb+srv://beenish:beemDBAtlas@cluster0-0u4hm.mongodb.net/test?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
   }
