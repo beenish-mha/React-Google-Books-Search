@@ -33,7 +33,7 @@ class App extends React.Component {
         dbBooks: booksResult,
       });
 
-      console.log(this.state.dbBooks[0].title);
+      console.log(this.state.dbBooks);
     });
   }
 
@@ -43,7 +43,7 @@ class App extends React.Component {
         <Navbar />
         <Header />
         {/* <AllBooks books={this.state.books} /> */}
-        <SavedBooks />
+        <SavedBooks books={this.state.dbBooks} />
       </div>
     );
   }

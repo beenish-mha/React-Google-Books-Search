@@ -1,12 +1,16 @@
 import React from "react";
 
-function SavedBooks() {
-  return (
-    <div className="hearderDiv container-fluid">
-      <h3>(React) Google Books Search</h3>
-      <h5 className="headerh5">Search and Save Books of Interest</h5>
+function SavedBooks({ books }) {
+  return books.map((book) => (
+    <div className="App">
+      <h2>{book.title}</h2>
+      <h4>{book.authors}</h4>
+      <p>Description : {book.description}</p>
+      <img src={book.image} alt={book.title} />
+      <br />
+      <a href={book.Link}>Book preview</a>
     </div>
-  );
+  ));
 }
 
 export default SavedBooks;
