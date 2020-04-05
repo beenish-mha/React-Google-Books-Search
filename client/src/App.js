@@ -24,7 +24,7 @@ class App extends React.Component {
         isLoading: false,
       });
 
-      console.log(this.state.books);
+      // console.log(this.state.books);
     });
 
     API.getDBBooks().then((result) => {
@@ -34,7 +34,7 @@ class App extends React.Component {
         dbBooks: booksResult,
       });
 
-      console.log(this.state.dbBooks);
+      // console.log(this.state.dbBooks);
     });
   }
 
