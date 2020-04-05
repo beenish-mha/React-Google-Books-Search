@@ -3,7 +3,7 @@ import API from "./utils/Api";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-// import AllBooks from "./components/AllBooks";
+
 import SearchBook from "./components/SearchBook";
 import Footer from "./components/Footer";
 //import SavedBooks from "./components/SavedBooks";
@@ -16,17 +16,19 @@ class App extends React.Component {
     dbBooks: [],
   };
 
-  componentDidMount() {
-    API.getBooks().then((res) => {
+  getBook = (e) => {
+    e.preventDefault();
+    let searchedBook = e.target.elements.bookName.value;
+    API.getBooks(searchedBook).then((res) => {
       this.setState({
         books: res.data.items,
-
-        isLoading: false,
       });
 
       // console.log(this.state.books);
     });
+  };
 
+  componentDidMount() {
     API.getDBBooks().then((result) => {
       const booksResult = result.data;
 
@@ -43,9 +45,9 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Header />
-        <SearchBook books={this.state.books} />
+        <SearchBook books={this.state.books} getBook={this.getBook} />
         <Footer />
-        {/* <AllBooks books={this.state.books} /> */}
+
         {/* <SavedBooks books={this.state.dbBooks} /> */}
       </div>
     );

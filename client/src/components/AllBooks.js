@@ -2,7 +2,7 @@ import React from "react";
 
 function AllBooks({ books }) {
   return books.map((book) => (
-    <div className="mainDiv">
+    <div className="mainDiv" key={book.id}>
       <div>
         <div className="btnDiv">
           <button type="button">View</button>
@@ -14,9 +14,9 @@ function AllBooks({ books }) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <img
               src={book.volumeInfo.imageLinks.smallThumbnail}
               className="bookImg"
@@ -24,7 +24,7 @@ function AllBooks({ books }) {
             />
             <a href={book.volumeInfo.previewLink}>Book preview</a>
           </div>
-          <div class="col">
+          <div className="col">
             <p className="descriptionDiv">{book.volumeInfo.description}</p>
           </div>
         </div>

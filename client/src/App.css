@@ -40,8 +40,19 @@
 }
 
 .search-text {
+  width: 70%;
+  height: 60px;
+  margin-left: 130px;
   margin-bottom: 20px;
   border-style: groove;
+}
+
+.submitBtn {
+  border-style: groove;
+  background-color: #dbe1e9;
+  margin-left: 5px;
+  height: 60px;
+  width: 80px;
 }
 
 .footer {
