@@ -3,8 +3,8 @@ import API from "./utils/Api";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-// import AllBooks from "./components/AllBooks";
-import SavedBooks from "./components/SavedBooks";
+import AllBooks from "./components/AllBooks";
+//import SavedBooks from "./components/SavedBooks";
 
 class App extends React.Component {
   state = {
@@ -41,8 +41,8 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Header />
-        {/* <AllBooks books={this.state.books} /> */}
-        <SavedBooks books={this.state.dbBooks} />
+        <AllBooks books={this.state.books} />
+        {/* <SavedBooks books={this.state.dbBooks} /> */}
       </div>
     );
   }
