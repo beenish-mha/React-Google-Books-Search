@@ -22,13 +22,12 @@ class App extends React.Component {
         isLoading: false,
       });
 
-      //console.log(this.state.books);
+      console.log(this.state.books);
     });
 
     API.getDBBooks().then((result) => {
       const booksResult = result.data;
-      //const booksResult = JSON.stringify(result.data, null, 2);
-      // console.log( JSON.stringify(result, null, 2));
+
       this.setState({
         dbBooks: booksResult,
       });

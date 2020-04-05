@@ -8,6 +8,27 @@
   border-style: groove;
   width: 98%;
 }
+.mainDiv {
+  margin-bottom: 50px;
+  margin-left: 12px;
+  border-style: groove;
+  width: 98%;
+}
 .headerh5 {
   padding-bottom: 50px;
+}
+.cardDiv {
+  padding: 50px;
+  padding-right: 200px;
+}
+.btnDiv {
+  padding-left: 90%;
+}
+.bookImg {
+  padding-bottom: 5px;
+  width: 200px;
+  height: 200px;
+}
+.titleDiv {
+  margin-left: 63px;
 }
