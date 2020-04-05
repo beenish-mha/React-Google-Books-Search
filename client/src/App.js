@@ -3,7 +3,9 @@ import API from "./utils/Api";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import AllBooks from "./components/AllBooks";
+// import AllBooks from "./components/AllBooks";
+import SearchBook from "./components/SearchBook";
+import Footer from "./components/Footer";
 //import SavedBooks from "./components/SavedBooks";
 
 class App extends React.Component {
@@ -41,7 +43,9 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Header />
-        <AllBooks books={this.state.books} />
+        <SearchBook books={this.state.books} />
+        <Footer />
+        {/* <AllBooks books={this.state.books} /> */}
         {/* <SavedBooks books={this.state.dbBooks} /> */}
       </div>
     );
