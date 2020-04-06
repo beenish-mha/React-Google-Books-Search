@@ -1,8 +1,14 @@
 import React from "react";
+import API from "../utils/Api";
 
 function SavedBooks({ books }) {
+  function DeleteBook(e) {
+    const book = books.find((book) => book._id === e.target.name);
+    console.log(book._id);
+    API.deleteBook(book._id).then((res) => console.log(res));
+  }
   return books.map((book) => (
-    <div className="mainDiv" key={book.id}>
+    <div className="mainDiv" key={book._id}>
       <div>
         <div className="btnDiv">
           <button type="button">
@@ -10,7 +16,9 @@ function SavedBooks({ books }) {
               View
             </a>
           </button>
-          <button type="button">Delete</button>
+          <button type="button" name={book._id} onClick={DeleteBook}>
+            Delete
+          </button>
         </div>
         <div className="titleDiv">
           <h3 className="card-title">{book.title}</h3>
