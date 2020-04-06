@@ -1,6 +1,19 @@
 import React from "react";
+import API from "../utils/Api";
 
 function AllBooks({ books }) {
+  const saveClicked = (id) => {
+    const book = books.find((book) => book.id === id.target.name);
+
+    API.saveBook({
+      authors: book.volumeInfo.authors,
+      description: book.volumeInfo.description,
+      image: book.volumeInfo.imageLinks.thumbnail,
+      link: book.volumeInfo.infoLink,
+      title: book.volumeInfo.title,
+    }).then((response) => console.log(response));
+  };
+
   return books.map((book) => (
     <div className="mainDiv" key={book.id}>
       <div>
@@ -14,7 +27,9 @@ function AllBooks({ books }) {
               View
             </a>
           </button>
-          <button type="button">Save</button>
+          <button type="button" name={book.id} onClick={saveClicked}>
+            Save
+          </button>
         </div>
         <div className="titleDiv">
           <h3 className="card-title">{book.volumeInfo.title}</h3>

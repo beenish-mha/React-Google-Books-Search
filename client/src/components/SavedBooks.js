@@ -2,7 +2,7 @@ import React from "react";
 
 function SavedBooks({ books }) {
   return books.map((book) => (
-    <div className="mainDiv">
+    <div className="mainDiv" key={book.id}>
       <div>
         <div className="btnDiv">
           <button type="button">
@@ -18,12 +18,12 @@ function SavedBooks({ books }) {
         </div>
       </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col">
+      <div className="container">
+        <div className="row">
+          <div className="col">
             <img src={book.image} className="bookImg" alt={book.title} />
           </div>
-          <div class="col">
+          <div className="col">
             <p className="descriptionDiv">{book.description}</p>
           </div>
         </div>
