@@ -5,7 +5,15 @@ function AllBooks({ books }) {
     <div className="mainDiv" key={book.id}>
       <div>
         <div className="btnDiv">
-          <button type="button">View</button>
+          <button type="button">
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={book.volumeInfo.previewLink}
+            >
+              View
+            </a>
+          </button>
           <button type="button">Save</button>
         </div>
         <div className="titleDiv">
@@ -22,7 +30,6 @@ function AllBooks({ books }) {
               className="bookImg"
               alt={book.volumeInfo.title}
             />
-            <a href={book.volumeInfo.previewLink}>Book preview</a>
           </div>
           <div className="col">
             <p className="descriptionDiv">{book.volumeInfo.description}</p>

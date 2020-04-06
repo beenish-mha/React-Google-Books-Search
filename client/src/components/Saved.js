@@ -10,22 +10,9 @@ import SavedBooks from "./SavedBooks";
 class Saved extends React.Component {
   state = {
     isLoading: true,
-    search: "",
-    books: [],
+
     dbBooks: [],
   };
-
-  //   getBook = (e) => {
-  //     e.preventDefault();
-  //     let searchedBook = e.target.elements.bookName.value;
-  //     API.getBooks(searchedBook).then((res) => {
-  //       this.setState({
-  //         books: res.data.items,
-  //       });
-
-  //       // console.log(this.state.books);
-  //     });
-  //   };
 
   componentDidMount() {
     API.getDBBooks().then((result) => {
@@ -35,7 +22,7 @@ class Saved extends React.Component {
         dbBooks: booksResult,
       });
 
-      // console.log(this.state.dbBooks);
+      //console.log(this.state.dbBooks);
     });
   }
 

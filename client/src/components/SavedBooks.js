@@ -5,7 +5,11 @@ function SavedBooks({ books }) {
     <div className="mainDiv">
       <div>
         <div className="btnDiv">
-          <button type="button">View</button>
+          <button type="button">
+            <a target="_blank" rel="noopener noreferrer" href={book.link}>
+              View
+            </a>
+          </button>
           <button type="button">Delete</button>
         </div>
         <div className="titleDiv">
@@ -18,7 +22,6 @@ function SavedBooks({ books }) {
         <div class="row">
           <div class="col">
             <img src={book.image} className="bookImg" alt={book.title} />
-            <a href={book.link}>Book preview</a>
           </div>
           <div class="col">
             <p className="descriptionDiv">{book.description}</p>
