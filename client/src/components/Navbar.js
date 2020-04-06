@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="topnav">
@@ -8,16 +8,18 @@ function Navbar() {
           Google Books
         </a>
 
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="something">
-              Search <span className="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link active" href="something">
-              Save <span className="sr-only">(current)</span>
-            </a>
-          </div>
-        </div>
+        <ul className="nav nav-all">
+          <Link to="/">
+            <li className="nav-link">Home</li>
+          </Link>
+
+          <Link to="/Search">
+            <li className="nav-link">Search</li>
+          </Link>
+          <Link to="/Saved">
+            <li className="nav-link">Saved</li>
+          </Link>
+        </ul>
       </nav>
       <hr />
     </div>
