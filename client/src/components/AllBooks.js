@@ -6,7 +6,7 @@ function AllBooks({ books }) {
     const book = books.find((book) => book.id === id.target.name);
 
     API.saveBook({
-      authors: book.volumeInfo.authors,
+      authors: book.volumeInfo.authors.join(),
       description: book.volumeInfo.description,
       image: book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.infoLink,

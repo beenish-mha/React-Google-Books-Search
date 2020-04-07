@@ -10,7 +10,7 @@ app.use(express.static("client/build"));
 mongoose
   .connect(
     process.env.MONGODB_URI ||
-      "mongodb+srv://beenish:beemDBAtlas@cluster0-0u4hm.mongodb.net/test?retryWrites=true&w=majority"
+      "mongodb+srv://beenish:BeemongoDB5@cluster0-0u4hm.mongodb.net/test?retryWrites=true&w=majority"
   )
   .then(() => console.log("MongooDB connected"))
   .catch((err) => console.log(err));

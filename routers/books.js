@@ -25,13 +25,13 @@ router.post("/", (req, res, next) => {
   book
     .save()
     .then((result) => {
-      console.log(result);
+      res.status(201).json({
+        message: "handling post request",
+        bookCreated: book,
+      });
+      // console.log(result);
     })
     .catch((err) => console.log(err));
-  res.status(201).json({
-    message: "handling post request",
-    bookCreated: book,
-  });
 });
 
 router.get("/:bookId", (req, res, next) => {
