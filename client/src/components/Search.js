@@ -20,6 +20,8 @@ class Search extends React.Component {
     API.getBooks(searchedBook).then((res) => {
       this.setState({
         books: res.data.items,
+      }).catch((err) => {
+        console.log(err);
       });
 
       // console.log(this.state.books);

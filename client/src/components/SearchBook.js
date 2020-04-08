@@ -7,20 +7,7 @@ class SearchBook extends React.Component {
     search: "",
   };
 
-  // updateSearch(event) {
-  //   this.setState({
-  //     search: event.target.value,
-  //   });
-  // }
-
   render() {
-    // let filteredbooks = this.props.books.filter((book) => {
-    //   return (
-    //     book.volumeInfo.title
-    //       .toLowerCase()
-    //       .indexOf(this.state.search.toLowerCase()) !== -1
-    //   );
-    // });
     return (
       <div>
         <div className="bookSearchDiv container-fluid">

@@ -11,7 +11,9 @@ function AllBooks({ books }) {
       image: book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.infoLink,
       title: book.volumeInfo.title,
-    }).then((response) => console.log(response));
+    }).then((response) => {
+      alert("book saved");
+    });
   };
 
   return books.map((book) => (
