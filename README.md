@@ -9,7 +9,7 @@ Users are allowed to see their search. And by clicking on view button will take 
 ---
 
 ![screenshot of the app](client\public\screenshot1.jpg)
-![screenshot of the app](client\public\screenshot2.jpg)
+![screenshot of the app](https://github.com/beenish-mha/React-Google-Books-Search/blob/master/client/public/screenshot2.jpg)
 
 ---
 
